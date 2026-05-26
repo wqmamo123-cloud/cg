@@ -197,9 +197,10 @@ fun GameScreen(
     }
 
     // ── Promotion Dialog ─────────────────────────────────────
-    if (uiState.pendingPromotion != null) {
+    val pendingPromotion = uiState.pendingPromotion
+    if (pendingPromotion != null) {
         PromotionDialog(
-            promotingColor = uiState.pendingPromotion.color,
+            promotingColor = pendingPromotion.color,
             onPromotionChosen = viewModel::onPromotionChosen,
             onDismiss = viewModel::onPromotionDismissed
         )
